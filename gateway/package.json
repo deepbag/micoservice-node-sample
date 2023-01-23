@@ -1,0 +1,17 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "gateway": "concurrently \"nodemon ./index.js\" \"nodemon ../employes/index.js\" \"nodemon ../management/index.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fast-gateway": "^3.4.5",
+    "nodemon": "^2.0.20"
+  }
+}
