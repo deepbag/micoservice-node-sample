@@ -12,10 +12,15 @@ app.get("/get_all", async (req, res) => {
 app.get("/response_before_complete_process", async (req, res) => {
   try {
     res.send({ message: "Your request is processing please wait!" });
-    for (let i = 0; i < 5000; i++) {
-      console.log("running in background");
-    }
-    console.log("DONE");
+    setTimeout(() => {
+      console.log("START");
+      for (let i = 0; i < 20000; i++) {
+        if (i === 19999) {
+          console.log("RUNNING IN BACKGROUND");
+        }
+      }
+      console.log("DONE");
+    }, 3000);
   } catch (error) {
     return res.send({ message: "employes error" });
   }
